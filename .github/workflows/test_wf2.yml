@@ -1,0 +1,13 @@
+name: npm test 2
+on:
+  workflow_run:
+    workflows: ["npm test"]
+    types:
+      - completed
+
+jobs:
+  build_and_push_docker_image:
+    name: Push to DockerHub (tag=stellar/anchor-tests:${{ github.event.release.tag_name }})
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3

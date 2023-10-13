@@ -1,7 +1,7 @@
 name: docker image publish
 on:
   workflow_run:
-    workflows: ["npm test"]
+    workflows: ["npm publish"]
     branches: [master]
     types:
       - completed
@@ -18,11 +18,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-#
-#      - name: Build and push Docker images
-#        uses: docker/build-push-action@v4.0.0
-#        with:
-#          push: true
-#          tags: stellar/anchor-tests:${{ github.event.release.tag_name }},stellar/anchor-tests:latest
-#          file: Dockerfile
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v4.0.0
+        with:
+          push: true
+          tags: stellar/anchor-tests:${{ github.event.release.tag_name }},stellar/anchor-tests:latest
+          file: Dockerfile
 
