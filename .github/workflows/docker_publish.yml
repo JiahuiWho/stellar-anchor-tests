@@ -10,8 +10,8 @@ jobs:
   build_and_push_docker_image:
     name: Push to DockerHub (tag=stellar/anchor-tests:${{ github.event.release.tag_name }})
     runs-on: ubuntu-22.04
-#    steps:
-#      - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 #
 #      - name: Docker Login
 #        uses: docker/login-action@v2.1.0
