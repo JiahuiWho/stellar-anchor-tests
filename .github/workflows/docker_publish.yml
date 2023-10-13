@@ -2,6 +2,7 @@ name: docker image publish
 on:
   workflow_run:
     workflows: ["npm test"]
+    branches: [master]
     types:
       - completed
 
