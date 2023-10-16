@@ -1,7 +1,7 @@
 name: publish to npm and dockerhub
 
 on:
-  pull_request:
+  release:
 
 jobs:
   npm_publish:
