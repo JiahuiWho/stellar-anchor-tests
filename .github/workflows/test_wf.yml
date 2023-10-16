@@ -15,5 +15,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: npm test wf2
-        uses: ./.github/workflows/test_wf2.yml
+
+      - name: docker image publish
+        uses: ./.github/workflows/docker_publish
