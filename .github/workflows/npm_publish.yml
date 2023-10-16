@@ -1,6 +1,8 @@
 name: npm publish
 on:
-  pull_request:
+#  pull_request:
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   build-publish:
@@ -23,8 +25,8 @@ jobs:
 
       - name: Publish npm package
         run: yarn publish:anchor-tests
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: docker image publish
         uses: ./.github/workflows/docker_publish.yml
