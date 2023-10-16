@@ -28,5 +28,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: publish docker image
+      - name: Publish docker image
         uses: ./.github/workflows/docker_publish.yml
