@@ -1,8 +1,7 @@
 name: npm publish
 on:
-  pull_request:
-#  workflow_dispatch:
-#  workflow_call:
+  release:
+    types: [ published ]
 
 jobs:
   build-publish:
