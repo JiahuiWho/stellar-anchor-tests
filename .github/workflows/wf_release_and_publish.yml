@@ -1,21 +1,11 @@
 name: publish to npm and dockerhub
 
 on:
-#  release:
-#    types: [published]
   pull_request:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  npm_publish:
+    uses: ./.github/workflows/npm_publish.yml
 
-      - name: npm publish
-        uses: ./.github/workflows/npm_publish.yml
-
-      - name: docker image publish
-        uses: ./.github/workflows/docker_publish.yml
-
-
+  docker_image_publish:
+    uses: ./.github/workflows/docker_publish.yml
