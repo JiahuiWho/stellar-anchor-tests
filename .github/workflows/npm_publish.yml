@@ -11,22 +11,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
+#      - name: Install Node
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: '16.x'
+#          registry-url: 'https://registry.npmjs.org'
+#
+#      - name: Install Depencencies
+#        run: yarn install
+#
+#      - name: Build
+#        run: yarn build:all
+#
+#      - name: Publish npm package
+#        run: yarn publish:anchor-tests
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Install Depencencies
-        run: yarn install
-
-      - name: Build
-        run: yarn build:all
-
-      - name: Publish npm package
-        run: yarn publish:anchor-tests
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: docker image publish
-        uses: ./.github/workflows/docker_publish.yml
+#      - name: docker image publish
+#        uses: ./.github/workflows/docker_publish.yml
