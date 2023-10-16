@@ -15,13 +15,21 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install Depencencies
-        run: yarn install
-
-      - name: Build
-        run: yarn build:all
+#      - name: Install Depencencies
+#        run: yarn install
+#
+#      - name: Build
+#        run: yarn build:all
 
 #      - name: Publish npm package
 #        run: yarn publish:anchor-tests
 #        env:
 #          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  complete:
+    if: always()
+    needs: [docker_publish]
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker image publish
+        uses: ./.github/workflows/docker_publish.yml
