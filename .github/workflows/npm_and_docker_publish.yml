@@ -1,7 +1,6 @@
 name: npm and docker publish
 on:
-  release:
-    types: [published]
+  pull_request:
 
 jobs:
   build-publish:
