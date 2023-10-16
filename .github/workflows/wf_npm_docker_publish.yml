@@ -6,7 +6,7 @@ jobs:
   npm_publish:
     uses: ./.github/workflows/npm_publish.yml
   docker_publish:
-    uses: ./.github/workflows/npm_publish.yml
+    uses: ./.github/workflows/docker_publish.yml
 
   complete:
     if: always()
