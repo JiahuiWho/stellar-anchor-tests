@@ -1,0 +1,18 @@
+name: releas, publish to npm and dockerhub
+
+on:
+#  release:
+#    types: [published]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: npm publish
+        uses: ./.github/workflows/npm_publish.yml
+
+      - name: docker image publish
+        uses: ./.github/workflows/docker_publish
+
+
