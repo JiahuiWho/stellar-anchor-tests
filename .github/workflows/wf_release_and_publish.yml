@@ -1,4 +1,4 @@
-name: releas, publish to npm and dockerhub
+name: publish to npm and dockerhub
 
 on:
 #  release:
@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: npm test
-        uses: ./.github/workflows/test_wf.yml
+      - name: npm publish
+        uses: ./.github/workflows/npm_publish.yml
 
       - name: docker image publish
-        uses: ./.github/workflows/test_wf2.yml
+        uses: ./.github/workflows/docker_publish.yml
 
 
