@@ -21,10 +21,10 @@ jobs:
       - name: Build
         run: yarn build:all
 
-      - name: Publish npm package
-        run: yarn publish:anchor-tests
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#      - name: Publish npm package
+#        run: yarn publish:anchor-tests
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Docker Login
         uses: docker/login-action@v2.1.0
